@@ -1,6 +1,6 @@
 # QuestRest
 
-    # My ultimate goal with this app is to create a balance of effeciency, productivity, self care and fun.
+    # My ultimate goal with this app is to create a balance of efficiency, productivity, self care and fun.
 
     Quest Rest will help users who struggle to balance the never ending list of routine chores with much needed self care, in the mental, physical or spiritual realms; whatever you enjoy doing!  Life will always have another chore for you to do, make time for yourself to have a little fun!
 
@@ -34,7 +34,5 @@
 
     Assigned App Initial Responsibilities
         -Mary: Front-end
-        -Maria & Kyle: Backend/Database (utitlizing db migrations)
+        -Maria & Kyle: Backend/Database (utilizing db migrations)
     Researched UX/UI designs
-
-    
