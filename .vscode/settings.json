@@ -5,5 +5,7 @@
         "judgy",
         "questrest",
         "webfonts"
-    ]
+    ],
+    
+    "eslint.codeActionsOnSave.rules": null
 }
