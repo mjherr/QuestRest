@@ -2,10 +2,14 @@ import React from 'react';
 
 
 const Hero = () => {
+    const buttonStyling= `center-flex space-x-4 mr-2 font-bold bg-gradient-to-r from-[#2E5339] to-[#272755]
+    text-[#FFF1C2] rounded-sm ring-2 ring-[#E85D04] px-6 py-2 
+    hover:bg-[#E85D04]  hover:text-[#FFF1C2] hover:ring-[#FED9C3] mx-8 shadow-lg shadow-[#E85D04]`;
+    
   return (
-    <div className='text-[#FFF1C2]'>
+    <div className='text-[#FFF5C2]'>
       <div className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center'>
-        <h1 className='text-[#885091] text-6xl font-bold p-3'>
+        <h1 className='text-[#56008F] text-6xl text-shadow-[#E85D04] font-bold p-3'>
           Welcome to QuestRest
         </h1>
         <h2 className='md:text-7xl sm:text-5xl text-4xl font-bold md:py-6'>
@@ -16,7 +20,7 @@ const Hero = () => {
             in a way that resonates with you
           </p>
         </div>
-        <button className='bg-gradient-to-r from-bg-[#6A040F] to-bg-[#370617] .text-[#FFEEC2] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-[#F7FDAF]'>Get Started</button>
+        <button type='submit' className={buttonStyling}>Get Started</button>
       </div>
     </div>
   );

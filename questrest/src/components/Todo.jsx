@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
-import { db } from './postgres';
+import { db } from './heroku';
 import {
   query,
   collection,
@@ -9,7 +9,7 @@ import {
   doc,
   addDoc,
   deleteDoc,
-} from 'postgres';
+} from 'heroku';
 
 const style = {
     bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#0D2C54] to-[#001D3D]`,
@@ -17,7 +17,7 @@ const style = {
     heading: `text-3xl font-bold text-center text-[#6A040F] drop shadow lg shadow-[#9D0208] p-2`,
     form: `flex justify-between`,
     input: `border p-2 w-full text-xl`,
-    button:`border p-4 ml-2 bg:[#FFF1C2] text-[#]`,
+    button:`border p-4 ml-2 bg:[#FFF1C2] text-[#]`,  
     count: `text-center p-2`
   };
   
@@ -39,7 +39,7 @@ function Todo() {
     setInput('');
   };
 
-  // Read todo from postgres
+  // Read todo from heroku
   useEffect(() => {
     const q = query(collection(db, 'todos'));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -52,7 +52,7 @@ function Todo() {
     return () => unsubscribe();
   }, []);
 
-  // Update todo in postgres
+  // Update todo in heroku
   const toggleComplete = async (todo) => {
     await updateDoc(doc(db, 'todos', todo.id), {
       completed: !todo.completed,

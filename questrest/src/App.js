@@ -2,7 +2,7 @@ import React from 'react';
 import Login from './components/login';
 import Cards from './components/Cards';
 // import UserStats from './components/UserStats';
-// import Todo from './Todo';
+import Todo from './Todo';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 
