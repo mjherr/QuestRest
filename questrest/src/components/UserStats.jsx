@@ -6,8 +6,10 @@ function UserStats(data) {
 useEffect(() => {
     const fetchData = async () => {
         const response = await fetch(`http://localhost:5001/users`)
+        console.log(response)
         const resData = await response.json()
         setUsers(resData)
+
     }
     fetchData()
 }, [])
