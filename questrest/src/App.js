@@ -1,10 +1,10 @@
 import React from 'react';
 import Login from './components/login';
 import Cards from './components/Cards';
-// import UserStats from './components/UserStats';
-import Todo from './Todo';
+// import Todo from './Todo';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
+import UserStats from './components/UserStats';
 
 // const style = {
 //   bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#0D2C54] to-[#001D3D]`,
@@ -24,7 +24,7 @@ function App() {
       <Login />
       <Cards />
       {/* <Todo /> */}
-      {/* <UserStats /> */}
+      <UserStats />
     </div>
   );
 }

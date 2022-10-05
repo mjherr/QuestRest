@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
-import { db } from './heroku';
-import {
-  query,
-  collection,
-  onSnapshot,
-  updateDoc,
-  doc,
-  addDoc,
-  deleteDoc,
-} from 'heroku';
+// import { db } from './heroku';
+// import {
+//   query,
+//   collection,
+//   onSnapshot,
+//   updateDoc,
+//   doc,
+//   addDoc,
+//   deleteDoc,
+// } from 'heroku';
 
 const style = {
     bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#0D2C54] to-[#001D3D]`,
@@ -25,44 +25,44 @@ function Todo() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
 
-  // Create todo
-  const createTodo = async (e) => {
-    e.preventDefault(e);
-    if (input === '') {
-      alert('Please enter a valid todo');
-      return;
-    }
-    await addDoc(collection(db, 'todos'), {
-      text: input,
-      completed: false,
-    });
-    setInput('');
-  };
+  // // Create todo
+  // const createTodo = async (e) => {
+  //   e.preventDefault(e);
+  //   if (input === '') {
+  //     alert('Please enter a valid todo');
+  //     return;
+  //   }
+  //   await addDoc(collection(db, 'todos'), {
+  //     text: input,
+  //     completed: false,
+  //   });
+  //   setInput('');
+  // };
 
-  // Read todo from heroku
-  useEffect(() => {
-    const q = query(collection(db, 'todos'));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      let todosArr = [];
-      querySnapshot.forEach((doc) => {
-        todosArr.push({ ...doc.data(), id: doc.id });
-      });
-      setTodos(todosArr);
-    });
-    return () => unsubscribe();
-  }, []);
+  // // Read todo from heroku
+  // useEffect(() => {
+  //   const q = query(collection(db, 'todos'));
+  //   const unsubscribe = onSnapshot(q, (querySnapshot) => {
+  //     let todosArr = [];
+  //     querySnapshot.forEach((doc) => {
+  //       todosArr.push({ ...doc.data(), id: doc.id });
+  //     });
+  //     setTodos(todosArr);
+  //   });
+  //   return () => unsubscribe();
+  // }, []);
 
-  // Update todo in heroku
-  const toggleComplete = async (todo) => {
-    await updateDoc(doc(db, 'todos', todo.id), {
-      completed: !todo.completed,
-    });
-  };
+  // // Update todo in heroku
+  // const toggleComplete = async (todo) => {
+  //   await updateDoc(doc(db, 'todos', todo.id), {
+  //     completed: !todo.completed,
+  //   });
+  // };
 
-  // Delete todo
-  const deleteTodo = async (id) => {
-    await deleteDoc(doc(db, 'todos', id));
-  };
+  // // Delete todo
+  // const deleteTodo = async (id) => {
+  //   await deleteDoc(doc(db, 'todos', id));
+  // };
 
   return (
     <div className={style.bg}>
